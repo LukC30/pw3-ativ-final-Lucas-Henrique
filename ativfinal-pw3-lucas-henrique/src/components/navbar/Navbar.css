@@ -1,0 +1,11 @@
+.itens{
+    text-decoration: none;
+    color: blue;
+    
+
+}
+
+.itens:hover{
+    color: black;
+    
+}
