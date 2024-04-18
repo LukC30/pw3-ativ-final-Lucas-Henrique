@@ -1,17 +1,78 @@
 {
-    "Salas":[],
-    "Siglas": [
-        {
-            "id": "1",
-            "Sala": "1DSN"
-        },
-        {
-            "id": "1",
-            "Sala": "2DSN"
-        },
-        {
-            "id": "1",
-            "Sala": "3DSN"
-        }
-    ]
+  "Salas": [
+    {
+      "id": "b1a6",
+      "category": {
+        "id": "1",
+        "category": "1DSN"
+      },
+      "NomeTurma": "dsadsa"
+    },
+    {
+      "id": "8de0",
+      "category": {
+        "id": "1",
+        "category": "3DSN"
+      },
+      "NomeTurma": "SALA 1"
+    },
+    {
+      "id": "d566",
+      "category": {
+        "id": "1",
+        "category": "3DSN"
+      },
+      "NomeTurma": "SALA 1"
+    },
+    {
+      "id": "7995",
+      "category": {
+        "id": "1",
+        "category": "3DSN"
+      },
+      "NomeTurma": "SALA 1"
+    },
+    {
+      "id": "9d7d",
+      "category": {
+        "id": "1",
+        "category": "3DSN"
+      },
+      "NomeTurma": "SALA 1"
+    },
+    {
+      "id": "841f",
+      "category": {
+        "id": "1",
+        "category": "3DSN"
+      },
+      "NomeTurma": "SALA 1"
+    },
+    {
+      "id": "7b45",
+      "NomeTurma": "saal1"
+    },
+    {
+      "id": "cacc",
+      "NomeTurma": "saal1",
+      "category": {
+        "id": "1",
+        "category": "1DSN"
+      }
+    }
+  ],
+  "Siglas": [
+    {
+      "id": "1",
+      "Sala": "1DSN"
+    },
+    {
+      "id": "1",
+      "Sala": "2DSN"
+    },
+    {
+      "id": "1",
+      "Sala": "3DSN"
+    }
+  ]
 }

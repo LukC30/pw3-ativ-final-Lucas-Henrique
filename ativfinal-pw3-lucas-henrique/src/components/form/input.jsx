@@ -10,9 +10,10 @@ export default function Input({text, id, value, handlerOnChange, type, placehold
             <input
             type={type}
             id={id}
+            name={id}
             value={value}
             placeholder={placeholder}
-
+            onChange={handlerOnChange}
             />
         </div>
     )

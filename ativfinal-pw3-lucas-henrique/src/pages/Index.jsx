@@ -5,45 +5,63 @@ import Input from '../components/form/input';
 
 
 export default function CadastroAluno() {
-
-    useEffect(() => {
-        handleItens();
-    }, [])
-
-    const [sala, setSala] = ({});
     const [itens, setItens] = useState([]);
+    const [sala, setSala] = useState({});
+    useEffect(() => {
 
-    function handleItens() {
-        axios.get('http://localhost:5000/Salas')
-            .then((response) => {
-                setItens(response.data);
-                console.log(itens);
+        fetch('http://localhost:5000/Siglas',
+            {
+                method: 'GET',
+                headers: { 'Content-Type': 'application/json' }
             })
-            .catch((error) => {
-                console.log("Sua aplicação deu erro amigão" + error);
-            })
+            .then(
+                (response) => response.json()
+            ).then(
+                (data) => {
+                    setItens(data);
+                    console.log(itens);
+                    console.log(data)
+                    
+                }
+            )
+            .catch(
+                (error) => {
+                    console.log(`Não foi possivel fazer o fetch do conteudo: ${error}`)
+                }
+            )
+    },
+        []);
 
+    
+
+   
+
+    function handleClass() {
+        
     }
 
     function handleItens(event){
-
+        event.preventDefault();
         setSala({...sala, [event.target.id] : event.target.value});
         console.log(sala);
 
     }
 
-    function handleCategory(event){
+    function handleClassroom(event){
         setSala({...sala, category:{
-            id : event.target.value,
-            categoria : event.target.options[event.target.selectIndex].text
+            id: event.target.value,
+            category: event.target.options[event.target.selectedIndex].text
         }});
     }
 
     function handleSubmit(event){
         event.preventDefault();
-        axios.post('http://localhost:5000/', sala)
+        axios.post('http://localhost:5000/Salas', sala)
         .then((response)=>{
-
+            console.log(response.data)
+        })
+        .catch((error)=>{
+            console.log(error)
         })
     }
 
@@ -54,18 +72,20 @@ export default function CadastroAluno() {
             </h1>
             <section>
                 <form onSubmit={handleSubmit}>
-
                     <Input
                     type='text'
+                    id="NomeTurma"
                     placeholder='Digite o nome da turma'
                     text='Espaço para digitar o nome da turma: '
-                    handlerOnChange=""
+                    handlerOnChange={handleItens}
                     />
                     <SelectSala
-                        id='Salas'
+                        id='salas'
                         text='Selecione sua sala'
                         label='veja todas as salas disponiveis'
                         options={itens}
+                        handlerOnChange={handleClassroom}
+                        
                     />
                     <button type='submit'>Enviar</button>
                 </form>
