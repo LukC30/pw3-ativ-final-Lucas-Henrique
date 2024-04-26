@@ -2,11 +2,14 @@ import { useState, useEffect } from 'react';
 import axios from 'axios'
 import SelectSala from '../components/form/SelectSala'
 import Input from '../components/form/input';
-
+import styles from './index.module.css';
+import { useNavigate } from 'react-router-dom';
 
 export default function CadastroAluno() {
     const [itens, setItens] = useState([]);
     const [sala, setSala] = useState({});
+    const navigate = useNavigate("")
+
     useEffect(() => {
 
         fetch('http://localhost:5000/Siglas',
@@ -34,12 +37,6 @@ export default function CadastroAluno() {
 
     
 
-   
-
-    function handleClass() {
-        
-    }
-
     function handleItens(event){
         event.preventDefault();
         setSala({...sala, [event.target.id] : event.target.value});
@@ -59,6 +56,7 @@ export default function CadastroAluno() {
         axios.post('http://localhost:5000/Salas', sala)
         .then((response)=>{
             console.log(response.data)
+            navigate('/ListarAlunos', {state: 'Sala cadastrada com sucesso!'})
         })
         .catch((error)=>{
             console.log(error)
@@ -66,28 +64,27 @@ export default function CadastroAluno() {
     }
 
     return (
-        <div>
-            <h1>
+        <div className={styles.index}>
+            <h1 className={styles.title}>
                 Clique no botão para mostrar os itens no console:
             </h1>
-            <section>
+            <section className={styles.form}>
                 <form onSubmit={handleSubmit}>
                     <Input
-                    type='text'
-                    id="NomeTurma"
-                    placeholder='Digite o nome da turma'
-                    text='Espaço para digitar o nome da turma: '
-                    handlerOnChange={handleItens}
+                        type='text'
+                        id="NomeTurma"
+                        placeholder='Digite o nome da turma'
+                        text='Espaço para digitar o nome da turma: '
+                        handlerOnChange={handleItens}
                     />
                     <SelectSala
                         id='salas'
                         text='Selecione sua sala'
-                        label='veja todas as salas disponiveis'
+                        label='Veja todas as salas disponiveis:'
                         options={itens}
                         handlerOnChange={handleClassroom}
-                        
                     />
-                    <button type='submit'>Enviar</button>
+                    <button type='submit' style={{marginTop:'20px'}}>Enviar</button>
                 </form>
             </section>
         </div>

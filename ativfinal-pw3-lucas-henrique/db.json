@@ -1,60 +1,24 @@
 {
   "Salas": [
     {
-      "id": "b1a6",
+      "id": "7d1f",
       "category": {
         "id": "1",
         "category": "1DSN"
       },
-      "NomeTurma": "dsadsa"
+      "NomeTurma": "asASasA"
     },
     {
-      "id": "8de0",
+      "id": "b9f5",
+      "NomeTurma": "dasdasdasdas",
       "category": {
         "id": "1",
-        "category": "3DSN"
-      },
-      "NomeTurma": "SALA 1"
+        "category": "2DSN"
+      }
     },
     {
-      "id": "d566",
-      "category": {
-        "id": "1",
-        "category": "3DSN"
-      },
-      "NomeTurma": "SALA 1"
-    },
-    {
-      "id": "7995",
-      "category": {
-        "id": "1",
-        "category": "3DSN"
-      },
-      "NomeTurma": "SALA 1"
-    },
-    {
-      "id": "9d7d",
-      "category": {
-        "id": "1",
-        "category": "3DSN"
-      },
-      "NomeTurma": "SALA 1"
-    },
-    {
-      "id": "841f",
-      "category": {
-        "id": "1",
-        "category": "3DSN"
-      },
-      "NomeTurma": "SALA 1"
-    },
-    {
-      "id": "7b45",
-      "NomeTurma": "saal1"
-    },
-    {
-      "id": "cacc",
-      "NomeTurma": "saal1",
+      "id": "99d7",
+      "NomeTurma": "dsadasd",
       "category": {
         "id": "1",
         "category": "1DSN"

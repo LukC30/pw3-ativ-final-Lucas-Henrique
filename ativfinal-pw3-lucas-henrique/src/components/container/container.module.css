@@ -1,0 +1,10 @@
+.container{
+    width: 100vw;
+    margin: 0 auto;
+
+}
+
+.min_height{
+    min-height: 75%;
+    
+}

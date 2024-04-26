@@ -1,4 +1,4 @@
-import styles from './Navbar.css'
+import styles from './Navbar.module.css'
 import Container from '../container/container'
 import { Link, Outlet } from 'react-router-dom'
 
@@ -8,15 +8,15 @@ export default function Navbar(){
     return(
         <nav>
             <Container>
-                <ul>
-                    <li>
+                <ul className={styles.list}>
+                    <li className={styles.item}>
                         <Link to='/'>Home</Link>
                     </li>
-                    <li>
-                        <Link to='/'>Olá</Link>
+                    <li className={styles.item}>
+                        <Link to='/ListarAlunos'>Olá</Link>
                     </li>
-                    <li>
-                        <Link to='/'>Cu</Link>
+                    <li className={styles.item}>
+                        <Link to='/'>XD</Link>
                     </li>
                 </ul>
                 <Outlet/>
