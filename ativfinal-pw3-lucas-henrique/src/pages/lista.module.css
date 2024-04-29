@@ -3,7 +3,8 @@
     margin: 0 auto;
     margin-top: 10%;
     width: 50vw;
-    height: 40vh;
+    min-height: 40vh;
+    max-height: auto;
     background-color: blanchedalmond;
     padding: 15px 15px 15px 15px;
     border-radius: 15px;

@@ -1,27 +1,27 @@
 {
   "Salas": [
     {
-      "id": "7d1f",
+      "id": "fddc",
+      "NomeTurma": "Sala1",
       "category": {
         "id": "1",
         "category": "1DSN"
-      },
-      "NomeTurma": "asASasA"
+      }
     },
     {
-      "id": "b9f5",
-      "NomeTurma": "dasdasdasdas",
+      "id": "b02a",
+      "NomeTurma": "Sala2",
       "category": {
         "id": "1",
         "category": "2DSN"
       }
     },
     {
-      "id": "99d7",
-      "NomeTurma": "dsadasd",
+      "id": "d9b7",
+      "NomeTurma": "Sala3",
       "category": {
         "id": "1",
-        "category": "1DSN"
+        "category": "3DSN"
       }
     }
   ],
