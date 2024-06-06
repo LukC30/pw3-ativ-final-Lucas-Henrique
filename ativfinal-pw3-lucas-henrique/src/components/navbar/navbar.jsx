@@ -13,10 +13,7 @@ export default function Navbar(){
                         <Link to='/'>Home</Link>
                     </li>
                     <li className={styles.item}>
-                        <Link to='/ListarAlunos'>Olá</Link>
-                    </li>
-                    <li className={styles.item}>
-                        <Link to='/'>XD</Link>
+                        <Link to='/ListarTurmas'>Olá</Link>
                     </li>
                 </ul>
                 <Outlet/>

@@ -21,8 +21,6 @@ export default function Message({ type, message }) {
         <>
             {
                 visible && (
-
-
                     <div className={`${styles.message} ${styles[type]}`}>
                         <p>{message}</p>
                     </div>

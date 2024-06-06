@@ -11,6 +11,7 @@ export default function ListagemAlunos(){
     useEffect(()=>{
         axios.get('http://localhost:5000/Salas')
         .then((response)=>{
+            console.log(response.data)
             return setDados(response.data)
         })
         .catch((error)=>{
@@ -23,7 +24,18 @@ export default function ListagemAlunos(){
     let message = ""
     if(location.state)message = location.state;
     
+    function HandleDelete(id){
+        
+        axios.delete(`http://localhost:5000/Salas/${id}`)
+        .then((response)=>{
+            alert("Usuario deletado com sucesso!");
+            
+        })
+        .catch((error)=>{
+            console.error(`deu erro filhao ${error}`);
+        })
 
+    }
     return(
         <div className={style.index}>
             <h1 className={style.title}>Aqui as salas serão listadas</h1>
@@ -37,11 +49,11 @@ export default function ListagemAlunos(){
                 {
                     dados&&dados.map((sala, index)=>(
                         <CardSala
-                        id={sala.id}
-                        siglaSala={sala.category.category}
-                        nomeSala={sala.NomeTurma}
-                        idSigla={sala.category.id}
-
+                            id={sala.id}
+                            siglaSala={sala.category.category}
+                            nomeSala={sala.NomeTurma}
+                            idSigla={sala.category.id}
+                            handleDelete={HandleDelete}
                         />
                     ))
                 }

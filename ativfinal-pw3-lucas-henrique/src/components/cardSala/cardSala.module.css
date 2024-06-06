@@ -17,3 +17,15 @@
     background-color: crimson;
     padding-right: 1%;
 }
+
+.divSala label{
+    cursor: pointer;
+    text-decoration: none;
+}
+
+.divdiv{
+    display: flex;
+    justify-content: space-around;
+    /* margin-left: 55px; */
+
+}

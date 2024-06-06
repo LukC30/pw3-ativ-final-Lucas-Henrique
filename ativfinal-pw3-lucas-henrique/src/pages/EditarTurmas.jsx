@@ -3,13 +3,14 @@ import axios from 'axios'
 import SelectSala from '../components/form/SelectSala'
 import Input from '../components/form/input';
 import styles from './index.module.css';
-import { useNavigate } from 'react-router-dom';
+import { useNavigate, useParams } from 'react-router-dom';
 
 export default function CadastroAluno() {
     const [itens, setItens] = useState([]);
     const [sala, setSala] = useState({});
     const navigate = useNavigate("")
 
+    const {id} = useParams();
     useEffect(() => {
 
         fetch('http://localhost:5000/Siglas',
@@ -53,10 +54,10 @@ export default function CadastroAluno() {
 
     function handleSubmit(event){
         event.preventDefault();
-        axios.post('http://localhost:5000/Salas', sala)
+        axios.put(`http://localhost:5000/Salas/${id}`, sala)
         .then((response)=>{
             console.log(response.data)
-            navigate('/ListarTurmas', {state: 'Sala cadastrada com sucesso!'})
+            navigate('/ListarTurmas', {state: 'Sala editada com sucesso!'})
         })
         .catch((error)=>{
             console.log(error)
@@ -66,7 +67,7 @@ export default function CadastroAluno() {
     return (
         <div className={styles.index}>
             <h1 className={styles.title}>
-                Cadastre uma nova turma aqui!
+                Editar Turmas
             </h1>
             <section className={styles.form}>
                 <form onSubmit={handleSubmit}>

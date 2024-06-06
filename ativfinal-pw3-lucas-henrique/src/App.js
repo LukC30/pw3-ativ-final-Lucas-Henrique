@@ -1,6 +1,7 @@
 import Navbar from './components/navbar/navbar';
 import Index from './pages/Index'
-import ListagemAlunos from './pages/ListagemAlunos';
+import ListarTurmas from './pages/ListagemTurmas';
+import EditarTurmas from './pages/EditarTurmas'
 
 import { BrowserRouter, Route, Routes } from 'react-router-dom';
 
@@ -12,7 +13,8 @@ function App() {
         <Routes>
           <Route path='/' element={<Navbar/>}>
               <Route index element={<Index/>}/>
-              <Route path='/ListarAlunos' element={<ListagemAlunos/>}/>
+              <Route path='/ListarTurmas' element={<ListarTurmas/>}/>
+              <Route path='/EditarTurma/:id' element={<EditarTurmas/>}/>
           </Route>
         </Routes>
     </BrowserRouter>
